@@ -48,6 +48,13 @@ function printTasks() {
   console.log("   ║  LISTA DE TAREAS : ║    ");
   console.log("   ╚════════════════════╝    ");
   listTask.forEach((listTask, index) => {
+
+    const status = listTask.completed ? '[✔]' : '[ ]';
+    console.log('╔═══════════════════════════════════════════════════════════════╗');
+    console.log(`║   ${index}. ${status} ${listTask.indicator}: ${listTask.description}    `);
+    console.log('╚═══════════════════════════════════════════════════════════════╝');
+
+
     const status = listTask.completed ? "[✔]" : "[ ]";
     console.log(
       "╔════════════════════════════════════════════════════════════════╗"
@@ -58,6 +65,7 @@ function printTasks() {
     console.log(
       "╚════════════════════════════════════════════════════════════════╝"
     );
+
   });
 }
 
