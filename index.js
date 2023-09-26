@@ -31,25 +31,24 @@ function removeTask() {
       listTask.splice(index, 1);
       resolve(console.log("Tarea Eliminada con exito"));
     } else {
-     reject(console.log("Indice no valido!"));
+      reject(console.log("Indice no valido!"));
     }
   });
 }
 
 function completeTask() {
-    return new Promise((resolve, reject) => {
-        
-        const index = readlineSync.question(
-          "Ingrese el indice de la tarea a completar: "
-        );
-      
-        if (index >= 0 && index < listTask.length) {
-          listTask[index].completed = true;
-         resolve( console.log("Tarea compleatada con exito"));
-        } else {
-          reject(console.log("Indice no valido!"));
-        }
-    })
+  return new Promise((resolve, reject) => {
+    const index = readlineSync.question(
+      "Ingrese el indice de la tarea a completar: "
+    );
+
+    if (index >= 0 && index < listTask.length) {
+      listTask[index].completed = true;
+      resolve(console.log("Tarea compleatada con exito"));
+    } else {
+      reject(console.log("Indice no valido!"));
+    }
+  });
 }
 
 function printTasks() {
