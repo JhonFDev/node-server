@@ -6,11 +6,19 @@ function addTask() {
   const indicator = readlineSync.question('Ingrese el indicador de la tarea: ');
   const description = readlineSync.question('ingrese la descripcion de la tarea: ');
 
-  listTask.push({
+  const task = {
+    id: listTask.length, // Usar el índice como ID
     indicator,
     description,
-    completed: false
-  });
+    completed: false,
+  };
+
+  listTask.push(task);
+//   listTask.push({
+//     indicator,
+//     description,
+//     completed: false
+//   });
 
   console.log('Tarea agregada con exito');
 }
@@ -94,3 +102,4 @@ function run() {
 run();
 
 
+module.export = listTask;
