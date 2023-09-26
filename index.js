@@ -50,7 +50,6 @@ function printTasks() {
   });
 }
 
-// ejecutar y resolver las promesas con .then()
 
 function run() {
     while (true) {
