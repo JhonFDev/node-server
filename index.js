@@ -3,6 +3,26 @@ const readlineSync = require("readline-sync");
 let listTask = [];
 
 function addTask() {
+
+  const indicator = readlineSync.question('Ingrese el indicador de la tarea: ');
+  const description = readlineSync.question('ingrese la descripcion de la tarea: ');
+
+  const task = {
+    id: listTask.length, // Usar el índice como ID
+    indicator,
+    description,
+    completed: false,
+  };
+
+  listTask.push(task);
+//   listTask.push({
+//     indicator,
+//     description,
+//     completed: false
+//   });
+
+  console.log('Tarea agregada con exito');
+
   return new Promise((resolve, reject) => {
     const indicator = readlineSync.question(
       "Ingrese el indicador de la tarea: "
@@ -19,6 +39,7 @@ function addTask() {
 
     resolve(console.log("Tarea agregada con exito"));
   });
+
 }
 
 function removeTask() {
@@ -130,6 +151,10 @@ function run() {
 }
 run();
 
+
+
+module.export = listTask;
+
 // ejecutar y resolver las promesas con async/await
 
 // function run() {
@@ -200,3 +225,4 @@ run();
 //   }
 // }
 // run();
+
